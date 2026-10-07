@@ -1,0 +1,28 @@
+{
+  "name": "consumer-app-ts",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3201",
+    "build": "next build",
+    "start": "next start -p 3201",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "5.18.0",
+    "@mui/material-nextjs": "5.18.0",
+    "@npm-scope/mks-ui": "file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz",
+    "next": "15.5.27",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "5.9.3"
+  }
+}

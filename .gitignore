@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output and framework caches
+dist/
+.next/
+coverage/
+.cache/
+
+# TypeScript incremental build data
+*.tsbuildinfo
+
+# Package archives generated locally (the committed artifacts/ fixture is kept)
+*.tgz
+!artifacts/
+!artifacts/*.tgz
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
