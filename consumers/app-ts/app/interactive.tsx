@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { TablePagination } from "@mui/material";
-import { ButtonContained, TablePaginationActions } from "@npm-scope/mks-ui";
+import { ButtonContained, TablePaginationActions } from "@mks-ui/core";
 
 export function ClickCounter() {
   const [clicks, setClicks] = useState(0);

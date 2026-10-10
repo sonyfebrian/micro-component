@@ -11,12 +11,12 @@ dependencies:
   '@emotion/styled':
     specifier: 11.14.1
     version: 11.14.1(@emotion/react@11.14.0)(@types/react@19.3.0)(react@18.2.0)
+  '@mks-ui/core':
+    specifier: file:../../artifacts/mks-ui-core-0.1.0.tgz
+    version: file:../../artifacts/mks-ui-core-0.1.0.tgz(@mui/material@5.18.0)(@types/react@19.3.0)(react-dom@18.2.0)(react@18.2.0)
   '@mui/material':
     specifier: 5.18.0
     version: 5.18.0(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(@types/react@19.3.0)(react-dom@18.2.0)(react@18.2.0)
-  '@npm-scope/mks-ui':
-    specifier: file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz
-    version: file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz(@mui/material@5.18.0)(@types/react@19.3.0)(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: 15.5.7
     version: 15.5.7(@babel/core@7.29.7)(react-dom@18.2.0)(react@18.2.0)
@@ -3874,10 +3874,10 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz(@mui/material@5.18.0)(@types/react@19.3.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-F8VRmIHfRXhkT7Ulaiinean5becHXKw/JBzlAmWTvXfV+52vpMdDF2D+wmrSKpRaty14O4IhmpNyQYuh2nD/NA==, tarball: file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz}
-    id: file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz
-    name: '@npm-scope/mks-ui'
+  file:../../artifacts/mks-ui-core-0.1.0.tgz(@mui/material@5.18.0)(@types/react@19.3.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xiuGF5v/UY8N8NRpznF8Ba8tcN3QJE55tSXfjzxEV8XrCtT+748d9luz6MgMzhLYWFn72AJa1xNe5MKHRdH0CA==, tarball: file:../../artifacts/mks-ui-core-0.1.0.tgz}
+    id: file:../../artifacts/mks-ui-core-0.1.0.tgz
+    name: '@mks-ui/core'
     version: 0.1.0
     engines: {node: '>=18'}
     peerDependencies:

@@ -12,7 +12,7 @@ parsed.options.incremental = false; // Next sets this; invalid for an in-process
 
 const probePath = resolve(root, "type-tests", "__probe.tsx");
 const probe = [
-  'import { ButtonContained, ButtonOutlined } from "@npm-scope/mks-ui";',
+  'import { ButtonContained, ButtonOutlined } from "@mks-ui/core";',
   'export const a = <ButtonOutlined colorType="" />;',
   "export const b = <ButtonContained  />;",
   'export const c = <ButtonContained colorType="purple" />;',

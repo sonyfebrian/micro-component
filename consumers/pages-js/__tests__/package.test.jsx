@@ -2,12 +2,12 @@ import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { TablePagination, ThemeProvider, createTheme } from "@mui/material";
-import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@npm-scope/mks-ui";
+import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@mks-ui/core";
 
-describe("@npm-scope/mks-ui in a CommonJS Jest environment (like mks_webapp)", () => {
+describe("@mks-ui/core in a CommonJS Jest environment", () => {
   it("resolves the package to its CommonJS build", () => {
-    expect(require.resolve("@npm-scope/mks-ui")).toMatch(/dist[\\/]index\.cjs$/);
-    const cjs = require("@npm-scope/mks-ui");
+    expect(require.resolve("@mks-ui/core")).toMatch(/dist[\\/]index\.cjs$/);
+    const cjs = require("@mks-ui/core");
     expect(Object.keys(cjs).sort()).toEqual(["ButtonContained", "ButtonOutlined", "TablePaginationActions"]);
   });
 

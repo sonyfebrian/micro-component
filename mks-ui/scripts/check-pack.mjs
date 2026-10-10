@@ -1,8 +1,9 @@
 // Packs the package (dry run), then fails on any file outside the allowlist,
 // on secret-like content, internal URLs, auth code or MKS business terms.
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
+import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -11,6 +12,7 @@ const ALLOWED_FILES = [
   /^package\.json$/,
   /^README\.md$/,
   /^CHANGELOG\.md$/,
+  /^LICENSE$/,
   /^dist\/[\w/.-]+\.(js|cjs|d\.ts|d\.cts)$/,
 ];
 
@@ -31,7 +33,17 @@ const FORBIDDEN_CONTENT = [
   ["non-allowlisted URL", /https?:\/\/(?!(www\.)?(npmjs\.com|docs\.npmjs\.com|registry\.npmjs\.org|mui\.com|react\.dev|nextjs\.org)\b)[^\s)"'`]+/],
 ];
 
-const output = execFileSync("npm", ["pack", "--dry-run", "--json", "--ignore-scripts"], { cwd: root, encoding: "utf8" });
+const npmCache = mkdtempSync(join(tmpdir(), "mks-ui-npm-cache-"));
+let output;
+try {
+  output = execFileSync("npm", ["pack", "--dry-run", "--json", "--ignore-scripts"], {
+    cwd: root,
+    encoding: "utf8",
+    env: { ...process.env, npm_config_cache: npmCache },
+  });
+} finally {
+  rmSync(npmCache, { recursive: true, force: true });
+}
 const [result] = JSON.parse(output);
 const files = result.files.map((file) => file.path).sort();
 
@@ -44,7 +56,7 @@ for (const file of files) {
     if (match) errors.push(`${file}: ${label} ("${match[0].slice(0, 40)}")`);
   }
 }
-for (const required of ["package.json", "README.md", "dist/index.js", "dist/index.cjs", "dist/index.d.ts", "dist/index.d.cts"]) {
+for (const required of ["package.json", "README.md", "LICENSE", "dist/index.js", "dist/index.cjs", "dist/index.d.ts", "dist/index.d.cts"]) {
   if (!files.includes(required)) errors.push(`required file missing from tarball: ${required}`);
 }
 

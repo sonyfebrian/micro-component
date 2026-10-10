@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TablePagination } from "@mui/material";
-import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@npm-scope/mks-ui";
+import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@mks-ui/core";
 
 export default function Home() {
   const [clicks, setClicks] = useState(0);

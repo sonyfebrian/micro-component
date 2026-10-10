@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "5.18.0",
     "@mui/material-nextjs": "5.18.0",
-    "@npm-scope/mks-ui": "file:../../artifacts/npm-scope-mks-ui-0.1.0.tgz",
+    "@mks-ui/core": "file:../../artifacts/mks-ui-core-0.1.0.tgz",
     "next": "15.5.27",
     "react": "19.3.0",
     "react-dom": "19.3.0"
@@ -24,5 +24,6 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "typescript": "5.9.3"
-  }
+  },
+  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
 }

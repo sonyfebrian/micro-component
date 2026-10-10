@@ -1,10 +1,6 @@
-# @npm-scope/mks-ui
+# @mks-ui/core
 
-Reusable MUI components extracted from mks_webapp. **Proof of concept.**
-
-> `@npm-scope` is a placeholder. Replace it with the approved npm scope before
-> the first publish. The package is marked `"private": true` so it cannot be
-> published by accident; remove that flag only when publishing is approved.
+Reusable Material UI components for React applications.
 
 ## Components
 
@@ -20,20 +16,13 @@ Peer dependencies: `react` and `react-dom` 18.2+ or 19, `@mui/material` 5.14+, a
 the Emotion packages that MUI requires.
 
 ```bash
-pnpm add @npm-scope/mks-ui @mui/material @emotion/react @emotion/styled
-```
-
-A private package needs a read-only npm token in the consumer's `.npmrc`:
-
-```text
-@npm-scope:registry=https://registry.npmjs.org/
-//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+pnpm add @mks-ui/core @mui/material @emotion/react @emotion/styled
 ```
 
 ## Usage
 
 ```jsx
-import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@npm-scope/mks-ui";
+import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@mks-ui/core";
 import { TablePagination } from "@mui/material";
 
 <ButtonContained colorType="primary" onClick={save}>Simpan</ButtonContained>
@@ -67,15 +56,15 @@ package's base styles. Refs are forwarded to the `<button>` element.
 `onPageChange(event, page)`, where `page` is zero-based. Aria labels are fixed
 in Indonesian ("Halaman Sebelumnya" / "Halaman Berikutnya").
 
-The legacy mks_webapp component called `onPageChange(page)` with one argument.
-Code written for that contract needs an adapter when it adopts this package.
+Earlier integrations that use a one-argument `onPageChange(page)` callback
+need an adapter when adopting this package.
 
 ## Styling
 
 - No Tailwind or global CSS is required. Styles are applied with MUI `sx`.
 - Brand colors, radius, weight, disabled styles, hover and active colors, and
-  the button shadows are built in, so the look does not depend on the
-  mks_webapp theme.
+  button shadows are built in, so the look does not depend on a specific app
+  theme.
 - The font family still comes from the consumer's MUI theme.
 
 ## Next.js
@@ -85,9 +74,20 @@ Code written for that contract needs an adapter when it adopts this package.
   be imported directly from Server Components. Use MUI's App Router cache
   provider in the consumer for server-rendered styles.
 
+## Storybook
+
+Explore the components, switch the preview between light and dark themes, and
+adjust button props with Controls:
+
+```bash
+npm run storybook
+```
+
+Create a static Storybook site with `npm run build-storybook`.
+
 ## Development
 
-Requires Node 24 (see `.node-version`). Consumers can run on Node 18 or later.
+Requires Node 24.14.1 (see `.node-version`). Consumers can run on Node 18 or later.
 
 ```bash
 npm install

@@ -18,5 +18,6 @@
     "allowJs": false,
     "resolveJsonModule": false
   },
+  "files": [".storybook/main.ts", ".storybook/preview.tsx"],
   "include": ["src", "type-tests", "vitest.setup.ts", "vitest.config.ts", "tsdown.config.ts"]
 }

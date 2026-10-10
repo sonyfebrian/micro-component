@@ -4,14 +4,14 @@ import { createRef } from "react";
 import type { MouseEvent } from "react";
 import { TablePagination } from "@mui/material";
 import type { TablePaginationProps } from "@mui/material";
-import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@npm-scope/mks-ui";
+import { ButtonContained, ButtonOutlined, TablePaginationActions } from "@mks-ui/core";
 import type {
   ButtonContainedColorType,
   ButtonContainedProps,
   ButtonOutlinedColorType,
   ButtonOutlinedProps,
   TablePaginationActionsProps,
-} from "@npm-scope/mks-ui";
+} from "@mks-ui/core";
 
 const ref = createRef<HTMLButtonElement>();
 

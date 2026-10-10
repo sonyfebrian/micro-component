@@ -2,7 +2,7 @@
 // local "use client" wrapper. ButtonOutlined without colorType builds a
 // function-valued sx internally, which would fail across a server/client
 // boundary if the package's "use client" directive were missing.
-import { ButtonContained, ButtonOutlined } from "@npm-scope/mks-ui";
+import { ButtonContained, ButtonOutlined } from "@mks-ui/core";
 import { ClickCounter, PaginationDemo } from "./interactive";
 
 export const dynamic = "force-dynamic";
